@@ -46,7 +46,7 @@ export async function middleware(request) {
 
   const response = NextResponse.next();
   if (verifiedUser) {
-    console.log('x-user-info setting login',JSON.stringify(verifiedUser))
+    console.log('x-user-info setting',JSON.stringify(verifiedUser))
     response.headers.set('x-user-info', JSON.stringify(verifiedUser));
   }
   return response;

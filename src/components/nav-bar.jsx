@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
 import { ModeToggle } from "./ui/modeToggle";
-import { NavigationMenuDemo } from "./navigationSlide";
+import { NavigationMenuDemo } from "./navigation-slide";
 
 export function NavBar() {
   return (

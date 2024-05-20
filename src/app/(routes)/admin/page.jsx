@@ -1,4 +1,4 @@
-import LogoutButton from '@/components/actionButtons/logoutButton';
+import LogoutButton from '@/components/actionButtons/logout-button';
 import { headers } from 'next/headers';
 import React from 'react'
 

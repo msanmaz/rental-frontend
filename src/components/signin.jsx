@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { login } from "@/lib/authService";
-import InputField from "@/components/InputField";
-import FormLayout from "@/components/FormLayout";
+import InputField from "@/components/input-field";
+import FormLayout from "@/components/form-layout";
 import { initialState, reducer } from "@/reducers/signInReducer";
 
 export function SignIn() {

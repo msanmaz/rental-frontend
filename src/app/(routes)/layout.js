@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning={true} lang="en">
       <body className={inter.className}>
+      
       <NextThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
             <NavBar/>
             {children}
           </NextThemeProvider>
-
+      
       </body>
     </html>
   );

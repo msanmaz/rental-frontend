@@ -5,9 +5,9 @@ import React from 'react'
 const Admin = () => {
   const headersList = headers();
   const userInfoHeader = headersList.get('x-user-info');
-  
+
+
   let user = null;
-  
   if (userInfoHeader) {
     try {
       user = JSON.parse(userInfoHeader);

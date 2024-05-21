@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const FormLayout = ({ children, onSubmit }) => {
+const FormLayout = ({ children, action }) => {
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-100 dark:bg-gray-950">
       <div className="w-full max-w-md space-y-6 rounded-lg bg-white p-8 shadow-lg dark:bg-gray-900">
@@ -10,7 +10,7 @@ const FormLayout = ({ children, onSubmit }) => {
             Enter your email and password to access your dashboard.
           </p>
         </div>
-        <form className="space-y-4" onSubmit={onSubmit}>
+        <form className="space-y-4" action={action}>
           {children}
         </form>
       </div>

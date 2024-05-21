@@ -1,24 +1,25 @@
-// components/LogoutButton.js
 'use client';
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
-import { logout } from '@/lib/authService';
+import { signOut } from '@/app/actions/useractions';
 
 const LogoutButton = () => {
   const router = useRouter();
 
   const handleLogout = async () => {
-    try {
-      await logout();
-      router.push('/login');
-    } catch (error) {
-      console.log(error.message);
+    const response = await signOut();
+    if (response.success) {
+      console.log(response)
+      router.push('/login')
+    } else {
+     console.error(response,'response err')
     }
   };
 
-  return <Button onClick={handleLogout}>Logout</Button>;
+
+  return <form action={handleLogout}><Button>Logout</Button></form>;
 };
 
 export default LogoutButton;

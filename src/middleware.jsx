@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server';
 
 export async function middleware(request) {
   const token = request.cookies.get('token');
-
   const verifyToken = async (token) => {
     try {
       const response = await fetch('http://localhost:3000/user/verify-token', {
@@ -31,11 +30,10 @@ export async function middleware(request) {
 
   if (pathname.startsWith('/admin')) {
     if (!token?.value || !verifiedUser) {
+      console.log(`token: ${token?.value} user: ${verifiedUser}`)
       return NextResponse.redirect(new URL('/login', request.url));
     }
-
     const response = NextResponse.next();
-    console.log('x-user-info setting admin',JSON.stringify(verifiedUser))
     response.headers.set('x-user-info', JSON.stringify(verifiedUser));
     return response;
   }

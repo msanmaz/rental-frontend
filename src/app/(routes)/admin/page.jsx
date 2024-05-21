@@ -1,4 +1,3 @@
-import LogoutButton from '@/components/actionButtons/logout-button';
 import { Dashboard } from '@/components/dashboard';
 import { headers } from 'next/headers';
 import React from 'react'

@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Button } from './ui/button'
 import { useRouter } from 'next/navigation'
 import { logout } from '@/lib/authService'
+import { ModeToggle } from './ui/modeToggle'
 
 const Header = () => {
   const router = useRouter();
@@ -37,6 +38,11 @@ const Header = () => {
               type="search" />
           </form>
         </div>
+
+        <div className='flex-row flex items-center'>
+          <div className='px-4'>
+        <ModeToggle/>
+          </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
@@ -65,6 +71,8 @@ const Header = () => {
             <DropdownMenuItem onClick={()=>handleLogout()}>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+
+        </div>
       </header>
     </>
   )

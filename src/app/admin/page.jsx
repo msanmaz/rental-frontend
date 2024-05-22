@@ -1,4 +1,4 @@
-import { Dashboard } from '@/components/dashboard';
+import { Dashboard } from '@/components/dashboard/dashboard';
 import { headers } from 'next/headers';
 import React from 'react'
 

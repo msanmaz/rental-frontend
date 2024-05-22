@@ -19,7 +19,7 @@ const LogoutButton = () => {
   };
 
 
-  return <form action={handleLogout}><Button>Logout</Button></form>;
+  return <form action={handleLogout}><button>Logout</button></form>;
 };
 
 export default LogoutButton;

@@ -4,22 +4,11 @@ import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, Dropdown
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { Button } from './ui/button'
-import { useRouter } from 'next/navigation'
-import { logout } from '@/lib/authService'
 import { ModeToggle } from './ui/modeToggle'
+import Image from 'next/image'
+import LogoutButton from './actionButtons/logout-button'
 
 const Header = () => {
-  const router = useRouter();
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-      router.push('/login');
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
   return (
     <>
           <header
@@ -49,7 +38,7 @@ const Header = () => {
               className="rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
               size="icon"
               variant="ghost">
-              <img
+              <Image
                 alt="Avatar"
                 className="rounded-full"
                 height="32"
@@ -68,7 +57,7 @@ const Header = () => {
             <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuItem>Support</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={()=>handleLogout()}>Logout</DropdownMenuItem>
+            <DropdownMenuItem><LogoutButton/></DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 

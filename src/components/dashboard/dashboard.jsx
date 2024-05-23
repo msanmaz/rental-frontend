@@ -8,13 +8,11 @@ import Link from "next/link";
 
 export function Dashboard() {
   return (
-    <div key="1" className="flex min-h-screen w-full flex-col">
-      <div className="flex h-full flex-1">
-        <Sidebar />
+
         <main className="flex-1 p-6">
           <div className="mb-6 flex items-center justify-between">
             <h1 className="text-2xl font-bold">Dashboard</h1>
-            <Button size="sm"> <Link href='/addproperty'>Add Product</Link></Button>
+            <Button size="sm"> <Link href='/admin/addhouse'>Add Product</Link></Button>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             <DashboardCard title="Total Houses" icon={HomeIcon} amount="25" percentage="+20.1% from last month" />
@@ -26,8 +24,7 @@ export function Dashboard() {
             <RecentOrders />
           </div>
         </main>
-      </div>
-    </div>
+
   );
 }
 

@@ -43,8 +43,7 @@ export async function middleware(request) {
   if (pathname === "/login" && verifiedUser) {
     return NextResponse.redirect(new URL("/admin", request.url));
   }
-  console.log(pathname,'patnhnem')
-  if (pathname === ("/addproperty")) {
+  if (pathname === "/admin/addhouse") {
     console.log("addproprt");
     if (!token?.value || !verifiedUser) {
       console.log(`token: ${token?.value} user: ${verifiedUser}`);
@@ -64,5 +63,5 @@ export async function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/admin", "/login", "/addpropety"],
+  matcher: ["/admin/:path*", "/login"],
 };

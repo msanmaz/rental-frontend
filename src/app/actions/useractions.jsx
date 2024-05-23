@@ -7,6 +7,7 @@ import { cookies } from 'next/headers';
 export const signIn = async (formData) => {
   const email = formData.get('email');
   const password = formData.get('password');
+  console.log(email,'email formdata')
   try {
     const data = await login(email, password);
     cookies().set({

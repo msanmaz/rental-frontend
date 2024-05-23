@@ -17,9 +17,7 @@ const Admin = () => {
   }
   console.log(user.user.username,'userinfo')
   return (
-    <>
     <Dashboard/>
-    </>
   )
 }
 

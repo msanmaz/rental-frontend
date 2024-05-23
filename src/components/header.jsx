@@ -22,7 +22,7 @@ const Header = () => {
             <SearchIcon
               className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500 dark:text-gray-400" />
             <Input
-              className="h-9 w-[300px] rounded-md bg-gray-100 pl-8 text-sm focus:bg-white focus:outline-none dark:bg-gray-800 dark:text-gray-50 dark:focus:bg-gray-700"
+              className="h-9 w-[245px] md:w-[300px] rounded-md bg-gray-100 pl-8 text-sm focus:bg-white focus:outline-none dark:bg-gray-800 dark:text-gray-50 dark:focus:bg-gray-700"
               placeholder="Search..."
               type="search" />
           </form>

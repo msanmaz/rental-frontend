@@ -16,7 +16,7 @@ const InfoSection = () => {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 grid-cols-1 lg:gap-12">
+          <div className="mx-auto grid max-w-5xl px-8 items-center gap-6 py-12 grid-cols-1 lg:gap-12">
             <YatchCarousel/>
           </div>
         </div>

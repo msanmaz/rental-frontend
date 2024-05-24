@@ -29,7 +29,7 @@ export function Hero() {
         Explore the worlds most luxurious yachts and create unforgettable memories on the open sea. Book your dream yacht today.
         </p>
         <div className="mt-8 w-full max-w-2xl">
-          <form className="flex justify-center items-center rounded-lg px-4 p-2 bg-opacity-50 dark:bg-opacity-60 bg-white dark:bg-black shadow-lg">
+          <form className="flex justify-center items-center rounded-lg px-8 sm:px-4 p-2 bg-opacity-50 dark:bg-opacity-60 bg-white dark:bg-black shadow-lg">
             <div className="w-[42%] pr-4">
             <Select defaultValue="" id="cityId">
               <SelectTrigger>

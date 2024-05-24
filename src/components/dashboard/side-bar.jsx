@@ -3,10 +3,10 @@ import { NavLink } from "./nav-link";
 
 export function Sidebar() {
   return (
-    <nav className="flex flex-col gap-2 border-r bg-gray-100/40 p-4 dark:bg-gray-800/40 md:flex">
+    <nav className="hidden sm:flex flex-col gap-2 border-r bg-gray-100/40 p-4 dark:bg-gray-800/40 md:flex">
       <NavLink href="/admin" icon={HomeIcon}>Home</NavLink>
-      <NavLink href="#" icon={ShoppingCartIcon}>Orders</NavLink>
-      <NavLink href="#" icon={PackageIcon}>Products</NavLink>
+      <NavLink href="#" icon={ShoppingCartIcon}>For Sale</NavLink>
+      <NavLink href="#" icon={PackageIcon}>For Rent</NavLink>
       <NavLink href="#" icon={UsersIcon}>Customers</NavLink>
       <NavLink href="#" icon={LineChartIcon}>Analytics</NavLink>
     </nav>

@@ -6,7 +6,7 @@ const ServiceSection = () => {
   return (
     <>
       <section className="w-full py-12 md:py-24 lg:py-32 xl:py-16">
-        <div className="container px-4 md:px-24">
+        <div className="container px-8 md:px-24">
           <div className="grid gap-6 lg:grid-cols-[1fr_550px] lg:gap-12 xl:grid-cols-[1fr_650px]">
             <img
               alt="Yacht"

@@ -11,7 +11,7 @@ import {
 
 export function Hero() {
   return (
-    <section className="relative w-full h-[80vh] min-h-[600px] overflow-hidden">
+    <section className="relative w-full h-[50vh] sm:h-[80vh] min-h-[500px] overflow-hidden">
       <Image
         alt="Hero Image"
         src="/attilahomes-bg.webp"
@@ -22,10 +22,10 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-transparent" />
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center text-gray-50">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
           Find Your Dream Yatch
         </h1>
-        <p className="mt-4 max-w-3xl text-lg md:text-xl text-gray-300">
+        <p className="mt-4 max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
         Explore the worlds most luxurious yachts and create unforgettable memories on the open sea. Book your dream yacht today.
         </p>
         <div className="mt-8 w-full max-w-2xl">

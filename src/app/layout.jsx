@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import '@/app/globals.css';
 import { NextThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/header';
+import Footer from '@/components/footer';
 
 export const metadata = {
   title: "Dashboard",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           {children}
+          <Footer/>
         </NextThemeProvider>
       </body>
     </html>

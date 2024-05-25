@@ -25,7 +25,7 @@ export function Hero() {
         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
           Find Your Dream Yatch
         </h1>
-        <p className="mt-4 max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+        <p className="mt-4 max-w-[700px] md:text-xl dark:text-gray-400">
         Explore the worlds most luxurious yachts and create unforgettable memories on the open sea. Book your dream yacht today.
         </p>
         <div className="mt-8 w-full max-w-2xl">

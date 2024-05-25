@@ -14,13 +14,13 @@ export function Hero() {
     <section className="relative w-full h-[50vh] sm:h-[80vh] min-h-[500px] overflow-hidden">
       <Image
         alt="Hero Image"
-        src="/attilahomes-bg.webp"
+        src="/hero-image.webp"
         layout="fill"
         objectFit="cover"
         className="absolute inset-0"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-950/50 to-transparent" />
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center text-gray-50">
         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
           Find Your Dream Yatch

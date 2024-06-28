@@ -1,67 +1,60 @@
-// middleware.js
 import { NextResponse } from "next/server";
 
-export async function middleware(request) {
-  const token = request.cookies.get("token");
-  const verifyToken = async (token) => {
-    try {
-      const response = await fetch("http://localhost:3000/user/verify-token", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (!response.ok) {
-        throw new Error("Token verification failed");
-      }
-      return await response.json();
-    } catch (error) {
-      console.error("Token verification failed:", error.message);
-      return null;
+const PROTECTED_ROUTES = ["/admin", "/admin/addhouse"];
+const LOGIN_ROUTE = "/login";
+const API_VERIFY_TOKEN_URL = "http://localhost:3000/api/auth/verify-token";
+
+async function verifyToken(token) {
+  try {
+    const response = await fetch(API_VERIFY_TOKEN_URL, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (!response.ok) {
+      throw new Error("Token verification failed");
     }
-  };
-
-  const pathname = request.nextUrl.pathname;
-  let verifiedUser = null;
-  console.log(pathname,'patnhnem')
-
-  if (token?.value) {
-    verifiedUser = await verifyToken(token.value);
+    return await response.json();
+  } catch (error) {
+    console.error("Token verification failed:", error.message);
+    return null;
   }
-  console.log(pathname,'patnhnem')
+}
 
-  if (pathname.startsWith("/admin")) {
-    if (!token?.value || !verifiedUser) {
-      console.log(`token: ${token?.value} user: ${verifiedUser}`);
-      return NextResponse.redirect(new URL("/login", request.url));
+export async function middleware(request) {
+  const { pathname } = request.nextUrl;
+  const token = request.cookies.get("token")?.value;
+  let verifiedUser = null;
+
+  if (token) {
+    verifiedUser = await verifyToken(token);
+  }
+
+  // Handle protected routes
+  if (PROTECTED_ROUTES.some(route => pathname.startsWith(route))) {
+    if (!verifiedUser) {
+      console.log(`Unauthorized access attempt: ${pathname}`);
+      return NextResponse.redirect(new URL(LOGIN_ROUTE, request.url));
     }
     const response = NextResponse.next();
     response.headers.set("x-user-info", JSON.stringify(verifiedUser));
     return response;
   }
 
-  if (pathname === "/login" && verifiedUser) {
+  // Handle login route
+  if (pathname === LOGIN_ROUTE && verifiedUser) {
     return NextResponse.redirect(new URL("/admin", request.url));
   }
-  if (pathname === "/admin/addhouse") {
-    console.log("addproprt");
-    if (!token?.value || !verifiedUser) {
-      console.log(`token: ${token?.value} user: ${verifiedUser}`);
-      return NextResponse.redirect(new URL("/login", request.url));
-    }
-    const response = NextResponse.next();
-    response.headers.set("x-user-info", JSON.stringify(verifiedUser));
-    return response;
-  }
 
+  // For all other routes
+  const response = NextResponse.next();
   if (verifiedUser) {
-    console.log("x-user-info setting", JSON.stringify(verifiedUser));
     response.headers.set("x-user-info", JSON.stringify(verifiedUser));
   }
-  const response = NextResponse.next();
   return response;
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/login"],
+  matcher: [...PROTECTED_ROUTES, LOGIN_ROUTE],
 };

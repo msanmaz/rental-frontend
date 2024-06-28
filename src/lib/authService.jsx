@@ -2,7 +2,7 @@ const API_BASE_URL = 'http://localhost:3000';
 
 export const login = async (email, password) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/login`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const login = async (email, password) => {
 
 export const logout = async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/user/logout`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

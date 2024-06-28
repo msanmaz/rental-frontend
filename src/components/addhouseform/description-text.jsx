@@ -6,7 +6,7 @@ export function DescriptionTextarea() {
   return (
     <FormSection htmlFor="description" label="Description">
        <div className="col-span-1 space-y-2">
-          <Textarea id="description" placeholder="Enter property description" rows={4} />
+          <Textarea name='description' id="description" placeholder="Enter property description" rows={4} />
         </div>
     </FormSection>
   );

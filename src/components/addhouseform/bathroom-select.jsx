@@ -5,7 +5,7 @@ import { FormSection } from "./form-section";
 export function BathroomsSelect() {
   return (
     <FormSection htmlFor="bathrooms" label="Bathrooms">
-      <Select defaultValue="2" id="bathrooms" >
+      <Select type="bathroom" name='bathrooms' defaultValue="2" id="bathrooms" >
         <SelectTrigger>
           <SelectValue placeholder="Select bathrooms" />
         </SelectTrigger>
